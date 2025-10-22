@@ -37,17 +37,17 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-gradient">
+          <Link to="/" className="text-2xl font-bold text-gradient flex-shrink-0">
             ShaqX
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => navigateToSection(link.href)}
-                className="text-foreground/80 hover:text-foreground transition-colors"
+                className="text-foreground/80 hover:text-foreground transition-colors font-medium"
               >
                 {link.label}
               </button>
@@ -55,7 +55,7 @@ const Navbar = () => {
           </div>
 
           {/* Right Side Actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-shrink-0">
             {/* Theme Toggle */}
             <ThemeToggle />
             
@@ -71,7 +71,7 @@ const Navbar = () => {
 
             {/* CTA Button - Desktop */}
             <Button
-              className="hidden md:inline-flex"
+              className="hidden lg:inline-flex"
               onClick={() => navigateToSection("/#contact")}
             >
               {t("nav.getInTouch")}
@@ -80,7 +80,7 @@ const Navbar = () => {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 hover:bg-secondary rounded-lg transition-colors min-w-[44px] min-h-[44px]"
+              className="lg:hidden p-2 hover:bg-secondary rounded-lg transition-colors min-w-[44px] min-h-[44px]"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -94,7 +94,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 glass rounded-xl p-6 animate-scale-in">
+          <div className="lg:hidden mt-4 glass rounded-xl p-6 animate-scale-in">
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <button

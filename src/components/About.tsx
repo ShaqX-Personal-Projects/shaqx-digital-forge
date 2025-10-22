@@ -30,8 +30,8 @@ const About = () => {
             </div>
 
             <div className="text-center animate-scale-in" style={{ animationDelay: "100ms" }}>
-              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-secondary" />
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-primary" strokeWidth={2.5} />
               </div>
               <h3 className="text-xl font-semibold mb-2">{t("about.security.title")}</h3>
               <p className="text-muted-foreground">{t("about.security.desc")}</p>
