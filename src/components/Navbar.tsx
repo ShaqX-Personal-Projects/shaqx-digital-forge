@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
 import ThemeToggle from "@/components/ThemeToggle";
+import logo from "@/assets/ShaqX_v1_Geometric.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,8 +38,12 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-gradient flex-shrink-0">
-            ShaqX
+          <Link to="/" className="flex-shrink-0 flex items-center">
+            <img 
+              src={logo} 
+              alt="ShaqX Logo" 
+              className="h-8 w-auto transition-opacity hover:opacity-80"
+            />
           </Link>
 
           {/* Desktop Navigation - Centered */}
