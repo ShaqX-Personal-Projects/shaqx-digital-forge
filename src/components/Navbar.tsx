@@ -17,11 +17,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { label: t("nav.home"), href: "#" },
-    { label: t("nav.services"), href: "#services" },
-    { label: t("nav.cases"), href: "#cases" },
-    { label: t("nav.about"), href: "#about" },
-    { label: t("nav.contact"), href: "#contact" },
+    { label: t("nav.home"), href: "/" },
+    { label: t("nav.services"), href: "/#services" },
+    { label: t("nav.cases"), href: "/cases" },
+    { label: t("nav.about"), href: "/about" },
+    { label: t("nav.contact"), href: "/#contact" },
   ];
 
   return (
@@ -33,7 +33,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="text-2xl font-bold text-gradient">
+          <a href="/" className="text-2xl font-bold text-gradient">
             ShaqX
           </a>
 
@@ -44,6 +44,17 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 className="text-foreground/80 hover:text-foreground transition-colors"
+                onClick={(e) => {
+                  if (link.href.startsWith("/#")) {
+                    e.preventDefault();
+                    const id = link.href.substring(2);
+                    if (window.location.pathname !== "/") {
+                      window.location.href = link.href;
+                    } else {
+                      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }
+                }}
               >
                 {link.label}
               </a>
@@ -65,9 +76,15 @@ const Navbar = () => {
             {/* CTA Button - Desktop */}
             <Button
               className="hidden md:inline-flex"
-              asChild
+              onClick={() => {
+                if (window.location.pathname !== "/") {
+                  window.location.href = "/#contact";
+                } else {
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
             >
-              <a href="#contact">{t("nav.getInTouch")}</a>
+              {t("nav.getInTouch")}
             </Button>
 
             {/* Mobile Menu Toggle */}
@@ -93,16 +110,39 @@ const Navbar = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    setIsMobileMenuOpen(false);
+                    if (link.href.startsWith("/#")) {
+                      e.preventDefault();
+                      const id = link.href.substring(2);
+                      if (window.location.pathname !== "/") {
+                        window.location.href = link.href;
+                      } else {
+                        setTimeout(() => {
+                          document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+                        }, 100);
+                      }
+                    }
+                  }}
                   className="text-foreground/80 hover:text-foreground transition-colors py-2"
                 >
                   {link.label}
                 </a>
               ))}
-              <Button className="w-full mt-4" asChild>
-                <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  {t("nav.getInTouch")}
-                </a>
+              <Button 
+                className="w-full mt-4"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  if (window.location.pathname !== "/") {
+                    window.location.href = "/#contact";
+                  } else {
+                    setTimeout(() => {
+                      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                    }, 100);
+                  }
+                }}
+              >
+                {t("nav.getInTouch")}
               </Button>
             </div>
           </div>

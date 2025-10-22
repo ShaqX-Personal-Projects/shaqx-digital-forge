@@ -92,9 +92,135 @@ const translations = {
     "footer.support": "Support",
     "footer.general": "General",
     "footer.followUs": "Follow Us",
-    "footer.newsletter": "Stay updated with ShaqX insights",
+    "footer.newsletter": "Stay Updated",
+    "footer.newsletterDesc": "Get the latest ShaqX insights, updates, and digital innovation tips.",
     "footer.emailPlaceholder": "your@email.com",
     "footer.subscribe": "Subscribe",
+    "footer.policies": "Policies",
+    "footer.privacyPolicy": "Privacy Policy",
+    "footer.cookiePolicy": "Cookie Policy",
+    "footer.termsOfService": "Terms of Service",
+    "footer.language": "Language",
+    "footer.backToTop": "Back to Top",
+
+    // About Page
+    "about.page.heading": "About",
+    "about.page.headingGradient": "ShaqX",
+    "about.page.intro":
+      "We are a team of passionate technologists who believe in the power of digital innovation to transform businesses and improve lives.",
+    "about.page.mission":
+      "Our mission is to deliver cutting-edge, secure, and scalable digital solutions that empower companies to thrive in the modern digital landscape.",
+    "about.page.values.heading": "Our Core",
+    "about.page.values.headingGradient": "Values",
+    "about.page.values.subtitle": "These principles guide everything we do at ShaqX.",
+    "about.page.innovation.title": "Innovation First",
+    "about.page.innovation.desc":
+      "We stay ahead of the curve, using the latest technologies and methodologies to deliver solutions that give you a competitive edge.",
+    "about.page.security.title": "Security & Reliability",
+    "about.page.security.desc":
+      "Your data and users are our top priority. We build with enterprise-grade security standards and ensure maximum uptime.",
+    "about.page.client.title": "Client-Focused",
+    "about.page.client.desc":
+      "Your success is our success. We listen, collaborate, and deliver tailored solutions that meet your unique business needs.",
+    "about.page.quality.title": "Quality Excellence",
+    "about.page.quality.desc":
+      "We never compromise on quality. Every line of code, every design element, every feature is crafted with precision and care.",
+    "about.page.speed.title": "Speed & Agility",
+    "about.page.speed.desc":
+      "In the fast-paced digital world, timing matters. We deliver rapidly without sacrificing quality or security.",
+    "about.page.transparency.title": "Transparency",
+    "about.page.transparency.desc":
+      "We believe in open communication, honest pricing, and clear expectations. You'll always know where your project stands.",
+    "about.page.cta.heading": "Ready to Build Something Amazing?",
+    "about.page.cta.subtitle": "Let's turn your vision into reality with ShaqX's expertise.",
+    "about.page.cta.button": "Get in Touch",
+
+    // Cases Page
+    "cases.heading": "Success",
+    "cases.headingGradient": "Stories",
+    "cases.subtitle":
+      "Real projects, real results. See how ShaqX has helped businesses scale, innovate, and succeed.",
+    "cases.results": "Results",
+    "cases.cta.heading": "Start Your Project with ShaqX",
+    "cases.cta.subtitle": "Let's create your success story together.",
+    "cases.cta.button": "Get Started",
+    "cases.case1.title": "Fintech Platform Transformation",
+    "cases.case1.client": "Nordic Financial Services",
+    "cases.case1.description":
+      "Built a secure, scalable fintech platform with real-time payment processing, advanced fraud detection, and seamless user experience across web and mobile.",
+    "cases.case1.metric1": "Faster Transactions",
+    "cases.case1.metric2": "User Growth",
+    "cases.case1.tags": "Fintech, Web App, Mobile App, Security",
+    "cases.case2.title": "Healthcare Patient Management",
+    "cases.case2.client": "MediCare Solutions",
+    "cases.case2.description":
+      "Developed a comprehensive patient management system with appointment scheduling, electronic health records, and HIPAA-compliant data handling.",
+    "cases.case2.metric1": "Active Users",
+    "cases.case2.metric2": "Efficiency Gain",
+    "cases.case2.tags": "Healthcare, SaaS, Data Security",
+    "cases.case3.title": "E-Commerce Platform Redesign",
+    "cases.case3.client": "Retail Innovators AS",
+    "cases.case3.description":
+      "Redesigned and optimized an e-commerce platform, improving page load speeds, checkout flow, and integrating AI-powered product recommendations.",
+    "cases.case3.metric1": "Faster Load Times",
+    "cases.case3.metric2": "Revenue Increase",
+    "cases.case3.tags": "E-commerce, AI, Performance",
+
+    // Policies Page
+    "policies.heading": "Legal &",
+    "policies.headingGradient": "Policies",
+    "policies.intro":
+      "ShaqX values transparency and data protection. Here's how we handle information, privacy, and compliance.",
+    "policies.lastUpdated": "Last updated",
+    "policies.date": "January 2025",
+    "policies.privacy.title": "Privacy Policy",
+    "policies.privacy.titleShort": "Privacy",
+    "policies.privacy.section1.title": "1. Information We Collect",
+    "policies.privacy.section1.content":
+      "We collect information you provide directly to us, such as your name, email address, company name, and any messages you send through our contact forms. We also automatically collect certain information about your device and how you interact with our website, including IP address, browser type, and usage data.",
+    "policies.privacy.section2.title": "2. How We Use Your Information",
+    "policies.privacy.section2.content":
+      "We use the information we collect to respond to your inquiries, provide our services, improve our website, send you updates and marketing communications (with your consent), and comply with legal obligations. We never sell your personal information to third parties.",
+    "policies.privacy.section3.title": "3. Data Security",
+    "policies.privacy.section3.content":
+      "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.",
+    "policies.privacy.section4.title": "4. Your Rights",
+    "policies.privacy.section4.content":
+      "You have the right to access, correct, delete, or restrict the processing of your personal information. You may also object to processing or request data portability. To exercise these rights, please contact us at info@shaqx.com.",
+    "policies.privacy.section5.title": "5. Contact Us",
+    "policies.privacy.section5.content":
+      "If you have any questions about this Privacy Policy or our data practices, please contact us at info@shaqx.com or write to us at our registered business address.",
+    "policies.cookies.title": "Cookie Policy",
+    "policies.cookies.titleShort": "Cookies",
+    "policies.cookies.section1.title": "1. What Are Cookies",
+    "policies.cookies.section1.content":
+      "Cookies are small text files that are placed on your device when you visit our website. They help us provide you with a better experience by remembering your preferences and understanding how you use our site.",
+    "policies.cookies.section2.title": "2. Types of Cookies We Use",
+    "policies.cookies.section2.content":
+      "We use essential cookies (required for the website to function), analytics cookies (to understand how visitors interact with our site), and preference cookies (to remember your settings and choices). We do not use advertising or tracking cookies without your explicit consent.",
+    "policies.cookies.section3.title": "3. Managing Cookies",
+    "policies.cookies.section3.content":
+      "You can control and manage cookies through your browser settings. Please note that disabling certain cookies may affect the functionality of our website. Most browsers allow you to refuse cookies or delete cookies that have already been set.",
+    "policies.cookies.section4.title": "4. Third-Party Cookies",
+    "policies.cookies.section4.content":
+      "We may use third-party services such as Google Analytics to help us understand website usage. These services may set their own cookies. Please refer to their respective privacy policies for more information.",
+    "policies.terms.title": "Terms of Service",
+    "policies.terms.titleShort": "Terms",
+    "policies.terms.section1.title": "1. Acceptance of Terms",
+    "policies.terms.section1.content":
+      "By accessing and using the ShaqX website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.",
+    "policies.terms.section2.title": "2. Services Description",
+    "policies.terms.section2.content":
+      "ShaqX provides web and mobile application development, AI-powered solutions, business platforms, and related digital services. The specific scope of work for each project will be defined in a separate agreement or statement of work.",
+    "policies.terms.section3.title": "3. Intellectual Property",
+    "policies.terms.section3.content":
+      "All content, trademarks, and materials on our website are owned by ShaqX or our licensors. Unless otherwise agreed in writing, deliverables created for clients become the property of the client upon full payment, while ShaqX retains the right to showcase work in our portfolio.",
+    "policies.terms.section4.title": "4. Limitation of Liability",
+    "policies.terms.section4.content":
+      "ShaqX will not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with our services. Our total liability shall not exceed the amount paid by you for the specific service in question.",
+    "policies.terms.section5.title": "5. Governing Law",
+    "policies.terms.section5.content":
+      "These Terms of Service are governed by the laws of Denmark. Any disputes arising from these terms or our services shall be resolved in Danish courts. If any provision is found to be unenforceable, the remaining provisions shall remain in full effect.",
   },
   da: {
     // Navbar
@@ -179,9 +305,135 @@ const translations = {
     "footer.support": "Support",
     "footer.general": "Generelt",
     "footer.followUs": "Følg Os",
-    "footer.newsletter": "Bliv opdateret med ShaqX indsigter",
+    "footer.newsletter": "Bliv Opdateret",
+    "footer.newsletterDesc": "Få de seneste ShaqX indsigter, opdateringer og tips om digital innovation.",
     "footer.emailPlaceholder": "din@email.dk",
     "footer.subscribe": "Tilmeld",
+    "footer.policies": "Politikker",
+    "footer.privacyPolicy": "Privatlivspolitik",
+    "footer.cookiePolicy": "Cookie Politik",
+    "footer.termsOfService": "Servicevilkår",
+    "footer.language": "Sprog",
+    "footer.backToTop": "Tilbage til Top",
+
+    // About Page
+    "about.page.heading": "Om",
+    "about.page.headingGradient": "ShaqX",
+    "about.page.intro":
+      "Vi er et team af passionerede teknologer, der tror på digital innovations kraft til at transformere virksomheder og forbedre liv.",
+    "about.page.mission":
+      "Vores mission er at levere banebrydende, sikre og skalerbare digitale løsninger, der giver virksomheder mulighed for at trives i det moderne digitale landskab.",
+    "about.page.values.heading": "Vores Kerneværdier",
+    "about.page.values.headingGradient": "",
+    "about.page.values.subtitle": "Disse principper styrer alt, hvad vi gør hos ShaqX.",
+    "about.page.innovation.title": "Innovation Først",
+    "about.page.innovation.desc":
+      "Vi er altid foran kurven og bruger de nyeste teknologier og metoder til at levere løsninger, der giver dig en konkurrencefordel.",
+    "about.page.security.title": "Sikkerhed & Pålidelighed",
+    "about.page.security.desc":
+      "Dine data og brugere er vores højeste prioritet. Vi bygger med virksomhedssikkerhedsstandarder og sikrer maksimal oppetid.",
+    "about.page.client.title": "Kundefokuseret",
+    "about.page.client.desc":
+      "Din succes er vores succes. Vi lytter, samarbejder og leverer skræddersyede løsninger, der opfylder dine unikke forretningsbehov.",
+    "about.page.quality.title": "Kvalitetsekspertise",
+    "about.page.quality.desc":
+      "Vi går aldrig på kompromis med kvalitet. Hver kodelinje, hvert designelement, hver funktion er skabt med præcision og omhu.",
+    "about.page.speed.title": "Hastighed & Agilitet",
+    "about.page.speed.desc":
+      "I den hurtige digitale verden betyder timing noget. Vi leverer hurtigt uden at gå på kompromis med kvalitet eller sikkerhed.",
+    "about.page.transparency.title": "Gennemsigtighed",
+    "about.page.transparency.desc":
+      "Vi tror på åben kommunikation, ærlige priser og klare forventninger. Du vil altid vide, hvor dit projekt står.",
+    "about.page.cta.heading": "Klar til at Bygge Noget Fantastisk?",
+    "about.page.cta.subtitle": "Lad os omdanne din vision til virkelighed med ShaqX's ekspertise.",
+    "about.page.cta.button": "Kontakt Os",
+
+    // Cases Page
+    "cases.heading": "Succeshistorier",
+    "cases.headingGradient": "",
+    "cases.subtitle":
+      "Rigtige projekter, rigtige resultater. Se hvordan ShaqX har hjulpet virksomheder med at skalere, innovere og få succes.",
+    "cases.results": "Resultater",
+    "cases.cta.heading": "Start Dit Projekt med ShaqX",
+    "cases.cta.subtitle": "Lad os skabe din succeshistorie sammen.",
+    "cases.cta.button": "Kom i Gang",
+    "cases.case1.title": "Fintech Platform Transformation",
+    "cases.case1.client": "Nordiske Finansielle Tjenester",
+    "cases.case1.description":
+      "Byggede en sikker, skalerbar fintech-platform med realtidsbetalingsbehandling, avanceret svindeldetektering og problemfri brugeroplevelse på tværs af web og mobil.",
+    "cases.case1.metric1": "Hurtigere Transaktioner",
+    "cases.case1.metric2": "Brugervækst",
+    "cases.case1.tags": "Fintech, Web App, Mobil App, Sikkerhed",
+    "cases.case2.title": "Sundhedspatient Styring",
+    "cases.case2.client": "MediCare Løsninger",
+    "cases.case2.description":
+      "Udviklede et omfattende patientstyringssystem med aftalebestilling, elektroniske sundhedsjournaler og HIPAA-kompatibel datahåndtering.",
+    "cases.case2.metric1": "Aktive Brugere",
+    "cases.case2.metric2": "Effektivitetsgevinst",
+    "cases.case2.tags": "Sundhed, SaaS, Datasikkerhed",
+    "cases.case3.title": "E-handel Platform Redesign",
+    "cases.case3.client": "Retail Innovatorer AS",
+    "cases.case3.description":
+      "Redesignede og optimerede en e-handelsplatform, forbedrede sideindlæsningstider, checkout-flow og integrerede AI-drevne produktanbefalinger.",
+    "cases.case3.metric1": "Hurtigere Indlæsningstider",
+    "cases.case3.metric2": "Omsætningsstigning",
+    "cases.case3.tags": "E-handel, AI, Ydeevne",
+
+    // Policies Page
+    "policies.heading": "Juridisk &",
+    "policies.headingGradient": "Politikker",
+    "policies.intro":
+      "ShaqX værdsætter gennemsigtighed og databeskyttelse. Her er hvordan vi håndterer information, privatliv og compliance.",
+    "policies.lastUpdated": "Sidst opdateret",
+    "policies.date": "Januar 2025",
+    "policies.privacy.title": "Privatlivspolitik",
+    "policies.privacy.titleShort": "Privatliv",
+    "policies.privacy.section1.title": "1. Information Vi Indsamler",
+    "policies.privacy.section1.content":
+      "Vi indsamler oplysninger, du giver direkte til os, såsom dit navn, e-mailadresse, firmanavn og eventuelle beskeder, du sender gennem vores kontaktformularer. Vi indsamler også automatisk visse oplysninger om din enhed og hvordan du interagerer med vores hjemmeside, herunder IP-adresse, browsertype og brugsdata.",
+    "policies.privacy.section2.title": "2. Hvordan Vi Bruger Dine Oplysninger",
+    "policies.privacy.section2.content":
+      "Vi bruger de oplysninger, vi indsamler, til at besvare dine henvendelser, levere vores tjenester, forbedre vores hjemmeside, sende dig opdateringer og marketingkommunikation (med dit samtykke) og overholde juridiske forpligtelser. Vi sælger aldrig dine personlige oplysninger til tredjeparter.",
+    "policies.privacy.section3.title": "3. Datasikkerhed",
+    "policies.privacy.section3.content":
+      "Vi implementerer passende tekniske og organisatoriske foranstaltninger for at beskytte dine personlige oplysninger mod uautoriseret adgang, ændring, videregivelse eller ødelæggelse. Men ingen transmissionsmetode over internettet er 100% sikker, og vi kan ikke garantere absolut sikkerhed.",
+    "policies.privacy.section4.title": "4. Dine Rettigheder",
+    "policies.privacy.section4.content":
+      "Du har ret til at få adgang til, rette, slette eller begrænse behandlingen af dine personlige oplysninger. Du kan også gøre indsigelse mod behandling eller anmode om dataportabilitet. For at udøve disse rettigheder, kontakt os venligst på info@shaqx.com.",
+    "policies.privacy.section5.title": "5. Kontakt Os",
+    "policies.privacy.section5.content":
+      "Hvis du har spørgsmål om denne privatlivspolitik eller vores datapraksis, kontakt os venligst på info@shaqx.com eller skriv til os på vores registrerede forretningsadresse.",
+    "policies.cookies.title": "Cookie Politik",
+    "policies.cookies.titleShort": "Cookies",
+    "policies.cookies.section1.title": "1. Hvad Er Cookies",
+    "policies.cookies.section1.content":
+      "Cookies er små tekstfiler, der placeres på din enhed, når du besøger vores hjemmeside. De hjælper os med at give dig en bedre oplevelse ved at huske dine præferencer og forstå, hvordan du bruger vores side.",
+    "policies.cookies.section2.title": "2. Typer af Cookies Vi Bruger",
+    "policies.cookies.section2.content":
+      "Vi bruger essentielle cookies (nødvendige for at hjemmesiden fungerer), analysecookies (for at forstå hvordan besøgende interagerer med vores side) og præferencecookies (for at huske dine indstillinger og valg). Vi bruger ikke reklame- eller sporingscookies uden dit udtrykkelige samtykke.",
+    "policies.cookies.section3.title": "3. Håndtering af Cookies",
+    "policies.cookies.section3.content":
+      "Du kan kontrollere og administrere cookies gennem dine browserindstillinger. Bemærk venligst, at deaktivering af visse cookies kan påvirke funktionaliteten af vores hjemmeside. De fleste browsere giver dig mulighed for at afvise cookies eller slette cookies, der allerede er sat.",
+    "policies.cookies.section4.title": "4. Tredjepartscookies",
+    "policies.cookies.section4.content":
+      "Vi kan bruge tredjepartstjenester såsom Google Analytics til at hjælpe os med at forstå hjemmesidens brug. Disse tjenester kan sætte deres egne cookies. Se venligst deres respektive privatlivspolitikker for mere information.",
+    "policies.terms.title": "Servicevilkår",
+    "policies.terms.titleShort": "Vilkår",
+    "policies.terms.section1.title": "1. Acceptering af Vilkår",
+    "policies.terms.section1.content":
+      "Ved at få adgang til og bruge ShaqX's hjemmeside og tjenester accepterer du at være bundet af disse servicevilkår. Hvis du ikke accepterer disse vilkår, bedes du ikke bruge vores tjenester.",
+    "policies.terms.section2.title": "2. Beskrivelse af Tjenester",
+    "policies.terms.section2.content":
+      "ShaqX leverer web- og mobilapplikationsudvikling, AI-drevne løsninger, forretningsplatforme og relaterede digitale tjenester. Det specifikke omfang af arbejde for hvert projekt vil blive defineret i en separat aftale eller arbejdserklæring.",
+    "policies.terms.section3.title": "3. Intellektuel Ejendom",
+    "policies.terms.section3.content":
+      "Alt indhold, varemærker og materialer på vores hjemmeside ejes af ShaqX eller vores licensgivere. Medmindre andet er aftalt skriftligt, bliver leverancer skabt til kunder kundens ejendom ved fuld betaling, mens ShaqX bevarer retten til at fremvise arbejde i vores portefølje.",
+    "policies.terms.section4.title": "4. Ansvarsbegrænsning",
+    "policies.terms.section4.content":
+      "ShaqX vil ikke være ansvarlig for nogen indirekte, tilfældige, særlige eller følgeskader, der opstår fra eller i forbindelse med vores tjenester. Vores samlede ansvar skal ikke overstige det beløb, du har betalt for den specifikke tjeneste i spørgsmål.",
+    "policies.terms.section5.title": "5. Gældende Lovgivning",
+    "policies.terms.section5.content":
+      "Disse servicevilkår er underlagt dansk lovgivning. Eventuelle tvister, der opstår fra disse vilkår eller vores tjenester, skal løses i danske domstole. Hvis en bestemmelse findes at være uhåndhævelig, forbliver de resterende bestemmelser i fuld kraft.",
   },
 };
 
