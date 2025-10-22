@@ -8,12 +8,16 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBackground})` }}
+      {/* Professional gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-background" />
+      
+      {/* Subtle grid pattern overlay */}
+      <div className="absolute inset-0 opacity-[0.03]" 
+        style={{
+          backgroundImage: `linear-gradient(hsl(var(--border)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
+        }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-32 text-center">
