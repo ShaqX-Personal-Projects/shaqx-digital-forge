@@ -1,35 +1,24 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import heroBackground from "@/assets/hero-background.jpg";
+import heroBackground from "@/assets/hero-tech.jpg";
 
 const Hero = () => {
   const { t } = useLanguage();
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Tech-inspired gradient mesh background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-background" />
-      
-      {/* Animated gradient orbs */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[100px] animate-float" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[100px] animate-float" style={{ animationDelay: '1s' }} />
-      
-      {/* Tech grid pattern */}
-      <div className="absolute inset-0 opacity-[0.05]" 
-        style={{
-          backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px'
-        }}
+      {/* Hero background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBackground})` }}
       />
       
-      {/* Geometric accent lines */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
-        <div className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
-        <div className="absolute left-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-primary to-transparent" />
-        <div className="absolute right-1/3 top-0 w-px h-full bg-gradient-to-b from-transparent via-accent to-transparent" />
-      </div>
+      {/* Dark overlay for text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
+      
+      {/* Subtle animated accent glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] animate-pulse" />
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-32 text-center">
