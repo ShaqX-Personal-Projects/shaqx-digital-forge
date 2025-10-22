@@ -1,5 +1,5 @@
 import { Github, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,10 +8,21 @@ import { useScrollToSection } from "@/hooks/useScrollToSection";
 const Footer = () => {
   const { t, language, toggleLanguage } = useLanguage();
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
   const { navigateToSection } = useScrollToSection();
 
+  const handleHomeClick = () => {
+    if (location.pathname === "/") {
+      // Already on home, scroll to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // Navigate to home
+      navigateToSection("/");
+    }
+  };
+
   const quickLinks = [
-    { label: t("nav.home"), href: "/" },
+    { label: t("nav.home"), href: "/", onClick: handleHomeClick },
     { label: t("nav.services"), href: "/#services" },
     { label: t("nav.cases"), href: "/cases" },
     { label: t("nav.about"), href: "/about" },
@@ -53,7 +64,7 @@ const Footer = () => {
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <button
-                    onClick={() => navigateToSection(link.href)}
+                    onClick={() => link.onClick ? link.onClick() : navigateToSection(link.href)}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block"
                   >
                     {link.label}
@@ -175,7 +186,7 @@ const Footer = () => {
                 onClick={toggleLanguage}
                 className="px-3 py-1.5 rounded-lg bg-muted/50 hover:bg-primary transition-all text-xs font-medium w-full"
               >
-                {language === "en" ? "🇬🇧 English" : "🇩🇰 Dansk"}
+                {language === "en" ? "EN" : "DA"}
               </button>
               <button
                 onClick={scrollToTop}
