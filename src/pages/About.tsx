@@ -1,14 +1,19 @@
+import { useEffect } from "react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Zap, Shield, Users, Target, Heart, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const AboutContent = () => {
   const { t } = useLanguage();
-  const navigate = useNavigate();
+  const { navigateToSection } = useScrollToSection();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -108,7 +113,7 @@ const AboutContent = () => {
               <Button 
                 size="lg" 
                 className="text-lg px-8"
-                onClick={() => navigate("/#contact")}
+                onClick={() => navigateToSection("/#contact")}
               >
                 {t("about.page.cta.button")}
               </Button>

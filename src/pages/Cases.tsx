@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
@@ -5,11 +6,15 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, TrendingUp, Users, Clock, CheckCircle } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const CasesContent = () => {
   const { t } = useLanguage();
-  const navigate = useNavigate();
+  const { navigateToSection } = useScrollToSection();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const cases = [
     {
@@ -134,7 +139,7 @@ const CasesContent = () => {
               <Button 
                 size="lg" 
                 className="text-lg px-8 group"
-                onClick={() => navigate("/#contact")}
+                onClick={() => navigateToSection("/#contact")}
               >
                 {t("cases.cta.button")}
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

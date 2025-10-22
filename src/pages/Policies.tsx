@@ -13,6 +13,11 @@ const PoliciesContent = () => {
   const [activeTab, setActiveTab] = useState("privacy");
 
   useEffect(() => {
+    // Scroll to top on initial page load
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     // Switch to the correct tab based on hash
     if (location.hash) {
       const tab = location.hash.substring(1); // Remove the #
@@ -24,7 +29,7 @@ const PoliciesContent = () => {
         }, 100);
       }
     }
-  }, [location]);
+  }, [location.hash]);
 
   return (
     <>

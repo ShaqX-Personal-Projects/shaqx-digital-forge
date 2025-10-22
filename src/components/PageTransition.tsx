@@ -6,13 +6,19 @@ const PageTransition = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // Don't show transition if we're navigating for section scrolling
+    const state = location.state as { scrollToSection?: string } | null;
+    if (state?.scrollToSection) {
+      return;
+    }
+
     setIsTransitioning(true);
     const timer = setTimeout(() => {
       setIsTransitioning(false);
     }, 400);
 
     return () => clearTimeout(timer);
-  }, [location.pathname]);
+  }, [location.pathname, location.state]);
 
   if (!isTransitioning) return null;
 

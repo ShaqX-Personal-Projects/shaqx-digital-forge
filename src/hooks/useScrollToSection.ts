@@ -24,12 +24,8 @@ export const useScrollToSection = () => {
         const sectionId = href.substring(2);
         
         if (location.pathname !== "/") {
-          // Navigate to home page first, then scroll
-          navigate("/");
-          // Wait for navigation to complete before scrolling
-          setTimeout(() => {
-            scrollToSection(sectionId);
-          }, 450);
+          // Navigate to home page with state to indicate section navigation
+          navigate("/", { state: { scrollToSection: sectionId } });
         } else {
           // Already on home page, just scroll
           scrollToSection(sectionId);
