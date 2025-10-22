@@ -111,8 +111,10 @@ All colors MUST be HSL.
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent;
+    @apply bg-clip-text text-transparent inline-block;
     background-image: var(--gradient-primary);
+    padding-bottom: 0.15em;
+    line-height: 1.2;
   }
 
   .glow-primary {
