@@ -58,8 +58,8 @@ const AboutContent = () => {
               </div>
 
               <div className="glass p-8 rounded-lg animate-scale-in hover:glow-primary transition-all" style={{ animationDelay: "100ms" }}>
-                <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-6">
-                  <Shield className="w-8 h-8 text-secondary" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                  <Shield className="w-8 h-8 text-primary" strokeWidth={2.5} />
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">{t("about.page.security.title")}</h3>
                 <p className="text-muted-foreground leading-relaxed">{t("about.page.security.desc")}</p>
@@ -82,8 +82,8 @@ const AboutContent = () => {
               </div>
 
               <div className="glass p-8 rounded-lg animate-scale-in hover:glow-secondary transition-all" style={{ animationDelay: "400ms" }}>
-                <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-6">
-                  <Rocket className="w-8 h-8 text-secondary" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                  <Rocket className="w-8 h-8 text-primary" strokeWidth={2.5} />
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">{t("about.page.speed.title")}</h3>
                 <p className="text-muted-foreground leading-relaxed">{t("about.page.speed.desc")}</p>

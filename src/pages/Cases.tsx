@@ -18,7 +18,7 @@ const CasesContent = () => {
 
   const cases = [
     {
-      id: "fintech-platform",
+      id: "case1",
       icon: TrendingUp,
       metrics: [
         { label: t("cases.case1.metric1"), value: "85%" },
@@ -26,7 +26,7 @@ const CasesContent = () => {
       ],
     },
     {
-      id: "healthcare-app",
+      id: "case2",
       icon: Users,
       metrics: [
         { label: t("cases.case2.metric1"), value: "10K+" },
@@ -34,7 +34,7 @@ const CasesContent = () => {
       ],
     },
     {
-      id: "ecommerce-solution",
+      id: "case3",
       icon: Clock,
       metrics: [
         { label: t("cases.case3.metric1"), value: "60%" },
