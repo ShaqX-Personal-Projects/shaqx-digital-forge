@@ -4,19 +4,24 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Shield, Lock, FileText } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 const PoliciesContent = () => {
   const { t } = useLanguage();
   const location = useLocation();
+  const [activeTab, setActiveTab] = useState("privacy");
 
   useEffect(() => {
-    // Scroll to section if hash is present
+    // Switch to the correct tab based on hash
     if (location.hash) {
-      const element = document.querySelector(location.hash);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      const tab = location.hash.substring(1); // Remove the #
+      if (tab === 'privacy' || tab === 'cookies' || tab === 'terms') {
+        setActiveTab(tab);
+        // Scroll to top of page smoothly
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
       }
     }
   }, [location]);
@@ -37,7 +42,7 @@ const PoliciesContent = () => {
           </div>
 
           {/* Tabs */}
-          <Tabs defaultValue="privacy" className="w-full">
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-3 mb-12 h-auto p-1">
               <TabsTrigger value="privacy" className="flex items-center gap-2 py-3">
                 <Lock className="w-4 h-4" />

@@ -26,14 +26,17 @@ const Footer = () => {
   };
 
   return (
-    <footer className="border-t border-border/50 py-16 px-6 bg-background/50">
+    <footer className="border-t border-border/50 py-16 px-6 bg-background/50 backdrop-blur-sm">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-          {/* Column 1: Brand & Mission */}
-          <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold text-gradient mb-4">ShaqX</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              {t("footer.mission")}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
+          {/* Column 1: About ShaqX */}
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold text-gradient mb-3">ShaqX</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {t("footer.tagline")}
+            </p>
+            <p className="text-xs text-muted-foreground font-medium">
+              {t("footer.location")}
             </p>
             <p className="text-xs text-muted-foreground">
               {t("footer.cvr")}: 45847136
@@ -43,12 +46,12 @@ const Footer = () => {
           {/* Column 2: Quick Links */}
           <div>
             <h4 className="font-semibold mb-4 text-foreground">{t("footer.quickLinks")}</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block"
                     onClick={(e) => {
                       if (link.href.startsWith("/#")) {
                         e.preventDefault();
@@ -66,14 +69,17 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+          </div>
 
-            <h4 className="font-semibold mt-8 mb-4 text-foreground">{t("footer.policies")}</h4>
-            <ul className="space-y-2">
+          {/* Column 3: Legal */}
+          <div>
+            <h4 className="font-semibold mb-4 text-foreground">{t("footer.legal")}</h4>
+            <ul className="space-y-2.5">
               {policyLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block"
                   >
                     {link.label}
                   </a>
@@ -82,56 +88,49 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Contact Info */}
+          {/* Column 4: Contact Info */}
           <div>
             <h4 className="font-semibold mb-4 text-foreground">{t("footer.contactTitle")}</h4>
-            <div className="space-y-2">
+            <div className="space-y-3">
               <a
                 href="mailto:sales@shaqx.com"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
+                className="flex items-start gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
               >
-                <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
                 <div>
                   <div className="text-xs text-muted-foreground/70">{t("footer.sales")}</div>
-                  <div>sales@shaqx.com</div>
+                  <div className="font-medium">sales@shaqx.com</div>
                 </div>
               </a>
               <a
                 href="mailto:support@shaqx.com"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
+                className="flex items-start gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
               >
-                <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
                 <div>
                   <div className="text-xs text-muted-foreground/70">{t("footer.support")}</div>
-                  <div>support@shaqx.com</div>
+                  <div className="font-medium">support@shaqx.com</div>
                 </div>
               </a>
               <a
                 href="mailto:info@shaqx.com"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
+                className="flex items-start gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
               >
-                <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
                 <div>
                   <div className="text-xs text-muted-foreground/70">{t("footer.general")}</div>
-                  <div>info@shaqx.com</div>
+                  <div className="font-medium">info@shaqx.com</div>
                 </div>
               </a>
             </div>
           </div>
 
-          {/* Column 4: Social & Language */}
+          {/* Column 5: Stay Connected */}
           <div>
-            <h4 className="font-semibold mb-4 text-foreground">{t("footer.followUs")}</h4>
+            <h4 className="font-semibold mb-4 text-foreground">{t("footer.stayConnected")}</h4>
+            
+            {/* Social Media */}
             <div className="flex gap-3 mb-6">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-muted/50 hover:bg-primary flex items-center justify-center transition-all hover:scale-110"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
@@ -140,6 +139,15 @@ const Footer = () => {
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-muted/50 hover:bg-primary flex items-center justify-center transition-all hover:scale-110"
+                aria-label="GitHub"
+              >
+                <Github className="w-5 h-5" />
               </a>
               <a
                 href="https://twitter.com"
@@ -151,48 +159,45 @@ const Footer = () => {
                 <Twitter className="w-5 h-5" />
               </a>
             </div>
-            
-            {/* Language Toggle */}
+
+            {/* Newsletter */}
             <div className="mb-6">
-              <h4 className="font-semibold mb-3 text-foreground text-sm">{t("footer.language")}</h4>
+              <p className="text-xs text-muted-foreground mb-3">
+                {t("footer.newsletterShort")}
+              </p>
+              <div className="flex gap-2">
+                <Input 
+                  type="email" 
+                  placeholder={t("footer.emailPlaceholder")}
+                  className="h-9 text-sm"
+                />
+                <Button size="sm" className="whitespace-nowrap px-3">
+                  {t("footer.subscribe")}
+                </Button>
+              </div>
+            </div>
+
+            {/* Language & Back to Top */}
+            <div className="space-y-3">
               <button
                 onClick={toggleLanguage}
-                className="px-4 py-2 rounded-lg bg-muted/50 hover:bg-primary transition-all text-sm font-medium"
+                className="px-3 py-1.5 rounded-lg bg-muted/50 hover:bg-primary transition-all text-xs font-medium w-full"
               >
                 {language === "en" ? "🇬🇧 English" : "🇩🇰 Dansk"}
               </button>
-            </div>
-
-            {/* Back to Top */}
-            <button
-              onClick={scrollToTop}
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
-            >
-              <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
-              {t("footer.backToTop")}
-            </button>
-          </div>
-        </div>
-
-        {/* Newsletter Section */}
-        <div className="mb-12 pb-12 border-b border-border/50">
-          <div className="max-w-2xl mx-auto text-center">
-            <h4 className="font-semibold mb-3 text-foreground">{t("footer.newsletter")}</h4>
-            <p className="text-sm text-muted-foreground mb-4">
-              {t("footer.newsletterDesc")}
-            </p>
-            <div className="flex gap-2 max-w-md mx-auto">
-              <Input 
-                type="email" 
-                placeholder={t("footer.emailPlaceholder")}
-                className="h-10 text-sm"
-              />
-              <Button size="default" className="whitespace-nowrap">
-                {t("footer.subscribe")}
-              </Button>
+              <button
+                onClick={scrollToTop}
+                className="flex items-center justify-center gap-2 text-xs text-muted-foreground hover:text-primary transition-colors group w-full"
+              >
+                <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-1 transition-transform" />
+                {t("footer.backToTop")}
+              </button>
             </div>
           </div>
         </div>
+
+        {/* Divider */}
+        <div className="border-t border-border/50 mb-8"></div>
 
         {/* Bottom Copyright */}
         <div className="text-center">
