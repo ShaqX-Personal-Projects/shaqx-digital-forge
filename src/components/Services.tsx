@@ -1,4 +1,4 @@
-import { Smartphone, Building2, Brain, BarChart3, Briefcase } from "lucide-react";
+import { Smartphone, Building2, Brain, BarChart3, Briefcase, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
@@ -29,6 +29,11 @@ const Services = () => {
       icon: Briefcase,
       titleKey: "services.industry.title",
       descKey: "services.industry.desc",
+    },
+    {
+      icon: Globe,
+      titleKey: "services.website.title",
+      descKey: "services.website.desc",
     },
   ];
 

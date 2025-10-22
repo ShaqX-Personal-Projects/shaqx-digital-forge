@@ -13,9 +13,8 @@ const translations = {
     // Navbar
     "nav.home": "Home",
     "nav.services": "Services",
-    "nav.projects": "Projects",
-    "nav.ai": "AI Solutions",
-    "nav.blog": "Blog",
+    "nav.cases": "Cases",
+    "nav.about": "About",
     "nav.contact": "Contact",
     "nav.getInTouch": "Get in Touch",
     
@@ -39,6 +38,8 @@ const translations = {
     "services.tools.desc": "Intuitive dashboards, CRMs, and data visualization tools that drive decisions.",
     "services.industry.title": "Industry-Ready Applications",
     "services.industry.desc": "Specialized solutions for Fintech, Healthcare, Education, Real Estate, and more.",
+    "services.website.title": "Website Development",
+    "services.website.desc": "We build fast, modern, and SEO-friendly websites designed to attract customers and perform flawlessly on every device. From simple landing pages to full-scale corporate websites, ShaqX delivers stunning, optimized experiences that rank high and convert effectively.",
     
     // About
     "about.heading": "About",
@@ -78,19 +79,23 @@ const translations = {
     // Footer
     "footer.copyright": "All rights reserved.",
     "footer.cvr": "CVR",
+    "footer.mission": "ShaqX empowers businesses through intelligent digital solutions, combining innovation, speed, and quality.",
+    "footer.quickLinks": "Quick Links",
     "footer.contactTitle": "Contact Us",
     "footer.sales": "Sales",
     "footer.support": "Support",
     "footer.general": "General",
     "footer.followUs": "Follow Us",
+    "footer.newsletter": "Stay updated with ShaqX insights",
+    "footer.emailPlaceholder": "your@email.com",
+    "footer.subscribe": "Subscribe",
   },
   da: {
     // Navbar
     "nav.home": "Hjem",
     "nav.services": "Tjenester",
-    "nav.projects": "Projekter",
-    "nav.ai": "AI-Løsninger",
-    "nav.blog": "Blog",
+    "nav.cases": "Cases",
+    "nav.about": "Om Os",
     "nav.contact": "Kontakt",
     "nav.getInTouch": "Kontakt Os",
     
@@ -114,6 +119,8 @@ const translations = {
     "services.tools.desc": "Intuitive dashboards, CRM'er og datavisualiseringsværktøjer der driver beslutninger.",
     "services.industry.title": "Industriklare Applikationer",
     "services.industry.desc": "Specialiserede løsninger til Fintech, Sundhed, Uddannelse, Ejendomme og mere.",
+    "services.website.title": "Hjemmeside Udvikling",
+    "services.website.desc": "Vi bygger hurtige, moderne og SEO-venlige hjemmesider designet til at tiltrække kunder og fungere fejlfrit på enhver enhed. Fra simple landingssider til fuldskala virksomhedshjemmesider leverer ShaqX imponerende, optimerede oplevelser der rangerer højt og konverterer effektivt.",
     
     // About
     "about.heading": "Om",
@@ -153,11 +160,16 @@ const translations = {
     // Footer
     "footer.copyright": "Alle rettigheder forbeholdes.",
     "footer.cvr": "CVR",
+    "footer.mission": "ShaqX styrker virksomheder gennem intelligente digitale løsninger, der kombinerer innovation, hastighed og kvalitet.",
+    "footer.quickLinks": "Hurtige Links",
     "footer.contactTitle": "Kontakt Os",
     "footer.sales": "Salg",
     "footer.support": "Support",
     "footer.general": "Generelt",
     "footer.followUs": "Følg Os",
+    "footer.newsletter": "Bliv opdateret med ShaqX indsigter",
+    "footer.emailPlaceholder": "din@email.dk",
+    "footer.subscribe": "Tilmeld",
   },
 };
 
