@@ -1,22 +1,22 @@
 import { Zap, Shield, Users } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 px-6 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              About <span className="text-gradient">ShaqX</span>
+              {t("about.heading")} <span className="text-gradient">{t("about.headingGradient")}</span>
             </h2>
             <p className="text-xl text-foreground leading-relaxed mb-8">
-              We design and develop modern web and mobile applications, AI-powered tools, 
-              and business platforms that help companies automate workflows, enhance user 
-              experiences, and scale their operations.
+              {t("about.intro")}
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Our mission is to deliver smart, secure, and high-performing digital products 
-              that transform how businesses operate in the modern world.
+              {t("about.mission")}
             </p>
           </div>
 
@@ -25,24 +25,24 @@ const About = () => {
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Zap className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Innovation First</h3>
-              <p className="text-muted-foreground">Cutting-edge technology that keeps you ahead</p>
+              <h3 className="text-xl font-semibold mb-2">{t("about.innovation.title")}</h3>
+              <p className="text-muted-foreground">{t("about.innovation.desc")}</p>
             </div>
 
             <div className="text-center animate-scale-in" style={{ animationDelay: "100ms" }}>
               <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-secondary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Secure & Reliable</h3>
-              <p className="text-muted-foreground">Enterprise-grade security you can trust</p>
+              <h3 className="text-xl font-semibold mb-2">{t("about.security.title")}</h3>
+              <p className="text-muted-foreground">{t("about.security.desc")}</p>
             </div>
 
             <div className="text-center animate-scale-in" style={{ animationDelay: "200ms" }}>
               <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Client-Focused</h3>
-              <p className="text-muted-foreground">Your success is our priority</p>
+              <h3 className="text-xl font-semibold mb-2">{t("about.client.title")}</h3>
+              <p className="text-muted-foreground">{t("about.client.desc")}</p>
             </div>
           </div>
         </div>

@@ -1,6 +1,8 @@
 import { Github, Linkedin, Twitter } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -10,7 +12,7 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <h3 className="text-2xl font-bold text-gradient mb-2">ShaqX</h3>
             <p className="text-muted-foreground">
-              © {currentYear} ShaqX. All rights reserved.
+              © {currentYear} ShaqX. {t("footer.copyright")}
             </p>
           </div>
 
