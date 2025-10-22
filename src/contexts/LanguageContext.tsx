@@ -128,7 +128,7 @@ const translations = {
     "services.industry.desc": "Specialiserede løsninger til Fintech, Sundhed, Uddannelse, Ejendomme og mere.",
     "services.website.title": "Hjemmeside Udvikling",
     "services.website.desc":
-      "Vi bygger hurtige, moderne og SEO-venlige hjemmesider designet til at tiltrække kunder og fungere fejlfrit på enhver enhed. Fra simple landingssider til fuldskala virksomhedshjemmesider leverer ShaqX imponerende, optimerede oplevelser der rangerer højt og konverterer effektivt.",
+      "Vi bygger hurtige, moderne og SEO-venlige hjemmesider, der ser fantastiske ud, fungerer fejlfrit og skaber målbare resultater.",
 
     // About
     "about.heading": "Om",
