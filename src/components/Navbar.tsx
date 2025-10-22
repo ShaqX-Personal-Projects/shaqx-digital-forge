@@ -62,10 +62,10 @@ const Navbar = () => {
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-secondary transition-colors"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-secondary transition-colors min-w-[44px] min-h-[44px] justify-center"
               aria-label="Toggle language"
             >
-              <Languages className="w-4 h-4" />
+              <Languages className="w-5 h-5 md:w-4 md:h-4" />
               <span className="text-sm font-medium hidden sm:inline">{language.toUpperCase()}</span>
             </button>
 
@@ -80,7 +80,7 @@ const Navbar = () => {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 hover:bg-secondary rounded-lg transition-colors"
+              className="md:hidden p-2 hover:bg-secondary rounded-lg transition-colors min-w-[44px] min-h-[44px]"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -95,7 +95,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 glass rounded-xl p-6 animate-scale-in">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
@@ -103,13 +103,13 @@ const Navbar = () => {
                     setIsMobileMenuOpen(false);
                     navigateToSection(link.href);
                   }}
-                  className="text-foreground/80 hover:text-foreground transition-colors py-2 text-left"
+                  className="text-foreground/80 hover:text-foreground transition-colors py-3 px-4 text-left rounded-lg hover:bg-secondary/50 min-h-[44px]"
                 >
                   {link.label}
                 </button>
               ))}
               <Button 
-                className="w-full mt-4"
+                className="w-full mt-4 min-h-[48px]"
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   navigateToSection("/#contact");

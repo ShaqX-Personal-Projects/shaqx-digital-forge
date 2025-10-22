@@ -40,19 +40,19 @@ const Footer = () => {
   };
 
   return (
-    <footer className="border-t border-border/50 py-16 px-6 bg-background/50 backdrop-blur-sm">
+    <footer className="border-t border-border/50 py-12 md:py-16 px-4 md:px-6 bg-background/50 backdrop-blur-sm">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
           {/* Column 1: About ShaqX */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-gradient mb-3">ShaqX</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm md:text-sm text-muted-foreground leading-relaxed">
               {t("footer.tagline")}
             </p>
-            <p className="text-xs text-muted-foreground font-medium">
+            <p className="text-sm md:text-xs text-muted-foreground font-medium">
               {t("footer.location")}
             </p>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-sm md:text-xs text-muted-foreground">
               {t("footer.cvr")}: 45847136
             </p>
           </div>
@@ -65,7 +65,7 @@ const Footer = () => {
                 <li key={link.href}>
                   <button
                     onClick={() => link.onClick ? link.onClick() : navigateToSection(link.href)}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block"
+                    className="text-sm md:text-sm text-muted-foreground hover:text-primary transition-colors inline-block py-2 md:py-0"
                   >
                     {link.label}
                   </button>
@@ -82,7 +82,7 @@ const Footer = () => {
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block"
+                    className="text-sm md:text-sm text-muted-foreground hover:text-primary transition-colors inline-block py-2 md:py-0"
                   >
                     {link.label}
                   </Link>
@@ -138,7 +138,7 @@ const Footer = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-muted/50 hover:bg-primary flex items-center justify-center transition-all hover:scale-110"
+                className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-muted/50 hover:bg-primary flex items-center justify-center transition-all hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
@@ -147,7 +147,7 @@ const Footer = () => {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-muted/50 hover:bg-primary flex items-center justify-center transition-all hover:scale-110"
+                className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-muted/50 hover:bg-primary flex items-center justify-center transition-all hover:scale-110"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
@@ -156,7 +156,7 @@ const Footer = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-muted/50 hover:bg-primary flex items-center justify-center transition-all hover:scale-110"
+                className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-muted/50 hover:bg-primary flex items-center justify-center transition-all hover:scale-110"
                 aria-label="Twitter"
               >
                 <Twitter className="w-5 h-5" />
@@ -165,16 +165,16 @@ const Footer = () => {
 
             {/* Newsletter */}
             <div className="mb-6">
-              <p className="text-xs text-muted-foreground mb-3">
+              <p className="text-sm md:text-xs text-muted-foreground mb-3">
                 {t("footer.newsletterShort")}
               </p>
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <Input 
                   type="email" 
                   placeholder={t("footer.emailPlaceholder")}
-                  className="h-9 text-sm"
+                  className="h-11 md:h-9 text-sm"
                 />
-                <Button size="sm" className="whitespace-nowrap px-3">
+                <Button size="sm" className="whitespace-nowrap px-4 h-11 md:h-9">
                   {t("footer.subscribe")}
                 </Button>
               </div>
@@ -184,15 +184,15 @@ const Footer = () => {
             <div className="space-y-3">
               <button
                 onClick={toggleLanguage}
-                className="px-3 py-1.5 rounded-lg bg-muted/50 hover:bg-primary transition-all text-xs font-medium w-full"
+                className="px-4 py-2.5 md:py-1.5 rounded-lg bg-muted/50 hover:bg-primary transition-all text-sm md:text-xs font-medium w-full min-h-[44px] md:min-h-0"
               >
                 {language === "en" ? "EN" : "DA"}
               </button>
               <button
                 onClick={scrollToTop}
-                className="flex items-center justify-center gap-2 text-xs text-muted-foreground hover:text-primary transition-colors group w-full"
+                className="flex items-center justify-center gap-2 text-sm md:text-xs text-muted-foreground hover:text-primary transition-colors group w-full min-h-[44px] md:min-h-0 py-2.5 md:py-0"
               >
-                <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-1 transition-transform" />
+                <ArrowUp className="w-4 h-4 md:w-3.5 md:h-3.5 group-hover:-translate-y-1 transition-transform" />
                 {t("footer.backToTop")}
               </button>
             </div>

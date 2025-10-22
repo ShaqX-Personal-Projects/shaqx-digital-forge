@@ -49,19 +49,19 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6">
+    <section id="contact" className="py-16 md:py-24 px-4 md:px-6">
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-12 md:mb-16 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               {t("contact.heading")} <span className="text-gradient">{t("contact.headingGradient")}</span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg md:text-xl text-muted-foreground">
               {t("contact.subheading")}
             </p>
           </div>
 
-          <div className="glass p-8 md:p-12 rounded-xl animate-scale-in">
+          <div className="glass p-6 md:p-8 lg:p-12 rounded-xl animate-scale-in">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -76,7 +76,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     placeholder={t("contact.namePlaceholder")}
-                    className="bg-background/50"
+                    className="bg-background/50 h-12 md:h-10"
                   />
                 </div>
 
@@ -91,7 +91,7 @@ const Contact = () => {
                     value={formData.company}
                     onChange={handleChange}
                     placeholder={t("contact.companyPlaceholder")}
-                    className="bg-background/50"
+                    className="bg-background/50 h-12 md:h-10"
                   />
                 </div>
               </div>
@@ -109,7 +109,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   placeholder={t("contact.emailPlaceholder")}
-                  className="bg-background/50"
+                  className="bg-background/50 h-12 md:h-10"
                 />
               </div>
 
@@ -130,7 +130,7 @@ const Contact = () => {
                 />
               </div>
 
-              <Button type="submit" size="lg" className="w-full md:w-auto">
+              <Button type="submit" size="lg" className="w-full md:w-auto min-h-[48px]">
                 {t("contact.submit")}
               </Button>
             </form>
