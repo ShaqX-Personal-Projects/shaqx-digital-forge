@@ -8,7 +8,7 @@ const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-x-hidden">
       {/* Light mode hero background */}
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-100 dark:opacity-0 transition-opacity duration-500"
@@ -30,12 +30,12 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-32 text-center">
         <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-[1.15] pb-2">
             {t("hero.title")}
-            <span className="text-gradient block mt-2">{t("hero.titleGradient")}</span>
+            <span className="text-gradient block mt-3">{t("hero.titleGradient")}</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed pb-1">
             {t("hero.subtitle")}
           </p>
           
