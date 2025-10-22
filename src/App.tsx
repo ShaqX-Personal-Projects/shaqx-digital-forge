@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Cases from "./pages/Cases";
 import Policies from "./pages/Policies";
 import NotFound from "./pages/NotFound";
+import PageTransition from "./components/PageTransition";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <PageTransition />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />

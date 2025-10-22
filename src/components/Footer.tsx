@@ -1,11 +1,14 @@
 import { Github, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const Footer = () => {
   const { t, language, toggleLanguage } = useLanguage();
   const currentYear = new Date().getFullYear();
+  const { navigateToSection } = useScrollToSection();
 
   const quickLinks = [
     { label: t("nav.home"), href: "/" },
@@ -49,23 +52,12 @@ const Footer = () => {
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
+                  <button
+                    onClick={() => navigateToSection(link.href)}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block"
-                    onClick={(e) => {
-                      if (link.href.startsWith("/#")) {
-                        e.preventDefault();
-                        const id = link.href.substring(2);
-                        if (window.location.pathname !== "/") {
-                          window.location.href = link.href;
-                        } else {
-                          document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-                        }
-                      }
-                    }}
                   >
                     {link.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -77,12 +69,12 @@ const Footer = () => {
             <ul className="space-y-2.5">
               {policyLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
