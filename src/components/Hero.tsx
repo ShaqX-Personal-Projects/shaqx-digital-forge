@@ -8,14 +8,17 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Hero background image */}
+      {/* Hero background image - only in dark mode */}
       <div 
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center opacity-0 dark:opacity-100 transition-opacity duration-500"
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
       
-      {/* Dark overlay for text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
+      {/* Light mode gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/30 to-background opacity-100 dark:opacity-0 transition-opacity duration-500" />
+      
+      {/* Dark overlay for text contrast in dark mode */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background opacity-0 dark:opacity-100 transition-opacity duration-500" />
       
       {/* Subtle animated accent glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] animate-pulse" />

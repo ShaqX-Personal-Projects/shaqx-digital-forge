@@ -8,6 +8,45 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 5%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+
+    --primary: 174 72% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 5%;
+
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 174 72% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 94%;
+    --ring: 174 72% 56%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens - Light Mode */
+    --gradient-primary: linear-gradient(135deg, hsl(174 72% 56%), hsl(174 72% 66%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 98%), hsl(0 0% 95%));
+    --glow-primary: 0 0 40px hsl(174 72% 56% / 0.15);
+    --glow-secondary: 0 0 60px hsl(174 72% 56% / 0.1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
     --background: 0 0% 4%;
     --foreground: 0 0% 98%;
 
@@ -36,24 +75,21 @@ All colors MUST be HSL.
     --input: 0 0% 12%;
     --ring: 174 72% 56%;
 
-    --radius: 0.5rem;
-
-    /* Custom tokens */
+    /* Custom tokens - Dark Mode */
     --gradient-primary: linear-gradient(135deg, hsl(174 72% 56%), hsl(174 72% 66%));
     --gradient-hero: linear-gradient(180deg, hsl(0 0% 4%), hsl(0 0% 7%));
     --glow-primary: 0 0 40px hsl(174 72% 56% / 0.15);
     --glow-secondary: 0 0 60px hsl(174 72% 56% / 0.1);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border transition-colors duration-300;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
   }
 
   html {

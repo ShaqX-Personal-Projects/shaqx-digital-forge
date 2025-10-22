@@ -4,6 +4,7 @@ import { Menu, X, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,15 +55,18 @@ const Navbar = () => {
           </div>
 
           {/* Right Side Actions */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            {/* Theme Toggle */}
+            <ThemeToggle />
+            
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted/50 transition-colors"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-secondary transition-colors"
               aria-label="Toggle language"
             >
               <Languages className="w-4 h-4" />
-              <span className="text-sm font-medium">{language.toUpperCase()}</span>
+              <span className="text-sm font-medium hidden sm:inline">{language.toUpperCase()}</span>
             </button>
 
             {/* CTA Button - Desktop */}
@@ -76,7 +80,7 @@ const Navbar = () => {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 hover:bg-muted/50 rounded-lg transition-colors"
+              className="md:hidden p-2 hover:bg-secondary rounded-lg transition-colors"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
