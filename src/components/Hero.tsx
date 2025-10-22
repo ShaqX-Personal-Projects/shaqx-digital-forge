@@ -32,7 +32,7 @@ const Hero = () => {
             className="text-lg px-8 py-6 glow-primary hover:scale-105 transition-transform"
             asChild
           >
-            <a href="#contact">
+            <a href="#booking">
               {t("hero.cta")}
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>

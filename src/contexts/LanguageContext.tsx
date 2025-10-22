@@ -16,7 +16,7 @@ const translations = {
     "nav.projects": "Projects",
     "nav.ai": "AI Solutions",
     "nav.blog": "Blog",
-    "nav.contact": "Contact",
+    "nav.booking": "Book a Meeting",
     "nav.getInTouch": "Get in Touch",
     
     // Hero
@@ -52,17 +52,38 @@ const translations = {
     "about.client.title": "Client-Focused",
     "about.client.desc": "Your success is our priority",
     
-    // Contact
-    "contact.heading": "Let's Work",
-    "contact.headingGradient": "Together",
-    "contact.subheading": "Ready to transform your digital presence? Get in touch with us today.",
-    "contact.sales": "Sales",
-    "contact.support": "Support",
-    "contact.general": "General Inquiries",
-    "contact.cvr": "CVR",
+    // Booking
+    "booking.heading": "Let's Talk",
+    "booking.headingGradient": "Business",
+    "booking.subheading": "Ready to transform your digital presence? Schedule a meeting with our team.",
+    "booking.name": "Full Name",
+    "booking.namePlaceholder": "John Doe",
+    "booking.company": "Company Name",
+    "booking.companyPlaceholder": "Your Company",
+    "booking.email": "Email Address",
+    "booking.emailPlaceholder": "john@company.com",
+    "booking.date": "Preferred Date & Time",
+    "booking.message": "Tell us about your project",
+    "booking.messagePlaceholder": "Describe your project, goals, and how we can help...",
+    "booking.submit": "Schedule Meeting",
+    "booking.orContact": "Or reach us directly at:",
+    "booking.successTitle": "Meeting Request Sent!",
+    "booking.successMessage": "Your email client should open. We'll get back to you soon.",
+    
+    // Cookie Consent
+    "cookie.title": "Cookie Notice",
+    "cookie.message": "We use cookies to improve your experience on our site. By continuing, you accept our use of cookies for analytics and user experience enhancement.",
+    "cookie.acceptAll": "Accept All",
+    "cookie.managePreferences": "Manage Preferences",
     
     // Footer
     "footer.copyright": "All rights reserved.",
+    "footer.cvr": "CVR",
+    "footer.contactTitle": "Contact Us",
+    "footer.sales": "Sales",
+    "footer.support": "Support",
+    "footer.general": "General",
+    "footer.followUs": "Follow Us",
   },
   da: {
     // Navbar
@@ -71,7 +92,7 @@ const translations = {
     "nav.projects": "Projekter",
     "nav.ai": "AI-Løsninger",
     "nav.blog": "Blog",
-    "nav.contact": "Kontakt",
+    "nav.booking": "Book Møde",
     "nav.getInTouch": "Kontakt Os",
     
     // Hero
@@ -107,17 +128,38 @@ const translations = {
     "about.client.title": "Kundefokuseret",
     "about.client.desc": "Din succes er vores prioritet",
     
-    // Contact
-    "contact.heading": "Lad Os Arbejde",
-    "contact.headingGradient": "Sammen",
-    "contact.subheading": "Klar til at transformere din digitale tilstedeværelse? Kontakt os i dag.",
-    "contact.sales": "Salg",
-    "contact.support": "Support",
-    "contact.general": "Generelle Henvendelser",
-    "contact.cvr": "CVR",
+    // Booking
+    "booking.heading": "Lad Os Tale",
+    "booking.headingGradient": "Forretning",
+    "booking.subheading": "Klar til at transformere din digitale tilstedeværelse? Book et møde med vores team.",
+    "booking.name": "Fulde Navn",
+    "booking.namePlaceholder": "Anders Hansen",
+    "booking.company": "Firmanavn",
+    "booking.companyPlaceholder": "Dit Firma",
+    "booking.email": "E-mail Adresse",
+    "booking.emailPlaceholder": "anders@firma.dk",
+    "booking.date": "Foretrukken Dato & Tid",
+    "booking.message": "Fortæl os om dit projekt",
+    "booking.messagePlaceholder": "Beskriv dit projekt, mål, og hvordan vi kan hjælpe...",
+    "booking.submit": "Book Møde",
+    "booking.orContact": "Eller kontakt os direkte på:",
+    "booking.successTitle": "Mødeanmodning Sendt!",
+    "booking.successMessage": "Din e-mail klient skulle åbne. Vi vender tilbage hurtigst muligt.",
+    
+    // Cookie Consent
+    "cookie.title": "Cookie Meddelelse",
+    "cookie.message": "Vi bruger cookies til at forbedre din oplevelse på vores side. Ved at fortsætte accepterer du vores brug af cookies til analytik og brugeroplevelse.",
+    "cookie.acceptAll": "Accepter Alle",
+    "cookie.managePreferences": "Administrer Præferencer",
     
     // Footer
     "footer.copyright": "Alle rettigheder forbeholdes.",
+    "footer.cvr": "CVR",
+    "footer.contactTitle": "Kontakt Os",
+    "footer.sales": "Salg",
+    "footer.support": "Support",
+    "footer.general": "Generelt",
+    "footer.followUs": "Følg Os",
   },
 };
 

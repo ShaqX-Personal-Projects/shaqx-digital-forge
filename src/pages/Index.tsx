@@ -3,8 +3,9 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import About from "@/components/About";
-import Contact from "@/components/Contact";
+import BookMeeting from "@/components/BookMeeting";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 
 const Index = () => {
   return (
@@ -14,9 +15,10 @@ const Index = () => {
         <Hero />
         <Services />
         <About />
-        <Contact />
+        <BookMeeting />
         <Footer />
       </main>
+      <CookieConsent />
     </LanguageProvider>
   );
 };

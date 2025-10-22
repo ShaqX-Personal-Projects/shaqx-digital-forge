@@ -22,7 +22,7 @@ const Navbar = () => {
     { label: t("nav.projects"), href: "#projects" },
     { label: t("nav.ai"), href: "#ai" },
     { label: t("nav.blog"), href: "#blog" },
-    { label: t("nav.contact"), href: "#contact" },
+    { label: t("nav.booking"), href: "#booking" },
   ];
 
   return (
@@ -68,7 +68,7 @@ const Navbar = () => {
               className="hidden md:inline-flex"
               asChild
             >
-              <a href="#contact">{t("nav.getInTouch")}</a>
+              <a href="#booking">{t("nav.getInTouch")}</a>
             </Button>
 
             {/* Mobile Menu Toggle */}
@@ -101,7 +101,7 @@ const Navbar = () => {
                 </a>
               ))}
               <Button className="w-full mt-4" asChild>
-                <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                <a href="#booking" onClick={() => setIsMobileMenuOpen(false)}>
                   {t("nav.getInTouch")}
                 </a>
               </Button>
