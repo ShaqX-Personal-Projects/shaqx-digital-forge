@@ -4,14 +4,22 @@ import { Menu, X, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
+import { useTheme } from "next-themes";
 import ThemeToggle from "@/components/ThemeToggle";
-import logo from "@/assets/ShaqX_v1_Geometric.png";
+import logoBlack from "@/assets/ShaqX-black.png";
+import logoWhite from "@/assets/ShaqX-white.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { language, toggleLanguage, t } = useLanguage();
   const { navigateToSection } = useScrollToSection();
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +48,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex-shrink-0 flex items-center">
             <img 
-              src={logo} 
+              src={mounted && theme === "dark" ? logoWhite : logoBlack}
               alt="ShaqX Logo" 
               className="h-8 w-auto transition-opacity hover:opacity-80"
             />
