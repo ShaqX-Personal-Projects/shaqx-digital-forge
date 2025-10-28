@@ -50,7 +50,7 @@ const Navbar = () => {
             <img 
               src={mounted && theme === "dark" ? logoWhite : logoBlack}
               alt="ShaqX Logo" 
-              className="h-8 w-auto transition-opacity hover:opacity-80"
+              className="h-12 w-auto transition-opacity hover:opacity-80"
             />
           </Link>
 
