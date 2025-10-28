@@ -1,5 +1,6 @@
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -34,6 +35,14 @@ const PoliciesContent = () => {
 
   return (
     <>
+      <SEO
+        title={t("policies.heading") + " " + t("policies.headingGradient")}
+        description={t("policies.intro")}
+        keywords="privacy policy, cookie policy, terms of service, legal, GDPR, data protection"
+        ogTitle="Legal & Policies - ShaqX"
+        ogDescription={t("policies.intro")}
+        noindex={false}
+      />
       <Navbar />
       <main className="min-h-screen py-24 px-6 bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto max-w-5xl">

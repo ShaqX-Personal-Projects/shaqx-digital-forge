@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Zap, Shield, Users, Target, Heart, Rocket } from "lucide-react";
@@ -15,8 +16,28 @@ const AboutContent = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About ShaqX",
+    description: t("about.page.intro"),
+    mainEntity: {
+      "@type": "Organization",
+      name: "ShaqX",
+      description: t("about.page.mission"),
+    }
+  };
+
   return (
     <>
+      <SEO
+        title={t("about.page.heading") + " " + t("about.page.headingGradient")}
+        description={t("about.page.intro")}
+        keywords="ShaqX about, company values, innovation, security, client focused, web development team, Denmark tech company"
+        ogTitle="About ShaqX - Digital Innovation Experts"
+        ogDescription={t("about.page.intro")}
+        structuredData={structuredData}
+      />
       <Navbar />
       <main className="min-h-screen">
         {/* Hero Section */}

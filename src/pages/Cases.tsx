@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -15,6 +16,33 @@ const CasesContent = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Case Studies - ShaqX Success Stories",
+    description: t("cases.subtitle"),
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: [
+        {
+          "@type": "CreativeWork",
+          name: t("cases.case1.title"),
+          description: t("cases.case1.description"),
+        },
+        {
+          "@type": "CreativeWork",
+          name: t("cases.case2.title"),
+          description: t("cases.case2.description"),
+        },
+        {
+          "@type": "CreativeWork",
+          name: t("cases.case3.title"),
+          description: t("cases.case3.description"),
+        }
+      ]
+    }
+  };
 
   const cases = [
     {
@@ -45,6 +73,14 @@ const CasesContent = () => {
 
   return (
     <>
+      <SEO
+        title={t("cases.heading") + " " + t("cases.headingGradient")}
+        description={t("cases.subtitle")}
+        keywords="case studies, success stories, fintech, healthcare, e-commerce, web development projects, client results, portfolio"
+        ogTitle="ShaqX Case Studies - Real Projects, Real Results"
+        ogDescription={t("cases.subtitle")}
+        structuredData={structuredData}
+      />
       <Navbar />
       <main className="min-h-screen">
         {/* Hero Section */}
