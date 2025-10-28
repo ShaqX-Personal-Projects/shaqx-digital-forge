@@ -8,7 +8,7 @@ const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-x-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Light mode hero background */}
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-100 dark:opacity-0 transition-opacity duration-500"
@@ -25,7 +25,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/30 to-background transition-opacity duration-500" />
       
       {/* Subtle animated accent glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] animate-pulse" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[90vw] max-w-[600px] h-[90vw] max-h-[600px] bg-primary/10 rounded-full blur-[120px] animate-pulse" />
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-32 text-center">
