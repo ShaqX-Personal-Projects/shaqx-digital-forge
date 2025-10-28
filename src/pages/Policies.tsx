@@ -3,9 +3,10 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Shield, Lock, FileText } from "lucide-react";
+import { Shield, Lock, FileText, ArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const PoliciesContent = () => {
   const { t } = useLanguage();
@@ -36,6 +37,20 @@ const PoliciesContent = () => {
       <Navbar />
       <main className="min-h-screen py-24 px-6 bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto max-w-5xl">
+          {/* Back Button */}
+          <div className="mb-8 animate-fade-in">
+            <Button 
+              variant="ghost" 
+              className="group hover:text-primary" 
+              asChild
+            >
+              <Link to="/">
+                <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+                {t("nav.home")}
+              </Link>
+            </Button>
+          </div>
+
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
