@@ -1,15 +1,25 @@
+import { useState, useEffect } from "react";
 import { Github, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
+import { useTheme } from "next-themes";
+import logoBlack from "@/assets/ShaqX-black.png";
+import logoWhite from "@/assets/ShaqX-white.png";
 
 const Footer = () => {
+  const [mounted, setMounted] = useState(false);
   const { t, language, toggleLanguage } = useLanguage();
   const currentYear = new Date().getFullYear();
   const location = useLocation();
   const { navigateToSection } = useScrollToSection();
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleHomeClick = () => {
     if (location.pathname === "/") {
@@ -45,7 +55,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
           {/* Column 1: About ShaqX */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-gradient mb-3">ShaqX</h3>
+            <img 
+              src={mounted && theme === "dark" ? logoWhite : logoBlack}
+              alt="ShaqX Logo" 
+              className="h-10 w-auto mb-3"
+            />
             <p className="text-sm md:text-sm text-muted-foreground leading-relaxed">
               {t("footer.tagline")}
             </p>
