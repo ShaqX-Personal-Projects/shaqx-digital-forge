@@ -16,29 +16,38 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Create mailto link with form data
-    const subject = encodeURIComponent(`Contact Request from ${formData.name}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nCompany: ${formData.company || 'N/A'}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
     
-    window.location.href = `mailto:info@shaqx.com?subject=${subject}&body=${body}`;
-    
-    toast({
-      title: t("contact.successTitle"),
-      description: t("contact.successMessage"),
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      company: "",
-      email: "",
-      message: "",
-    });
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
+      });
+      
+      toast({
+        title: t("contact.successTitle"),
+        description: t("contact.successMessage"),
+      });
+      
+      // Reset form
+      setFormData({
+        name: "",
+        company: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Der opstod en fejl. Prøv venligst igen.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -62,7 +71,14 @@ const Contact = () => {
           </div>
 
           <div className="glass p-6 md:p-8 lg:p-12 rounded-xl animate-scale-in">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form 
+              name="contact" 
+              method="POST" 
+              data-netlify="true" 
+              onSubmit={handleSubmit} 
+              className="space-y-6"
+            >
+              <input type="hidden" name="form-name" value="contact" />
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium flex items-center gap-2">
