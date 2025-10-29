@@ -29,24 +29,37 @@ const IndexContent = () => {
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "ShaqX AI Marketing Platform",
-    description: "AI-drevet marketing platform til sociale medier, email, SEO og Google My Business indlæg",
+    "@type": "ProfessionalService",
+    name: "ShaqX",
+    description: "Softwareløsning, app udvikling, hjemmeside udvikling og AI-løsninger til virksomheder",
     url: "https://shaqx.com",
-    applicationCategory: "BusinessApplication",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "DKK"
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "DK",
+      addressLocality: "Copenhagen"
     },
-    featureList: "AI content generation, social media posts, email marketing, SEO optimization, Google My Business posts",
-    inLanguage: "da",
-    operatingSystem: "Web Browser",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "150"
-    }
+    telephone: "+45-XXXXXXXX",
+    email: "info@shaqx.com",
+    priceRange: "$$",
+    areaServed: {
+      "@type": "Country",
+      name: "Denmark"
+    },
+    serviceType: [
+      "Softwareløsning",
+      "App Udvikling", 
+      "Hjemmeside Udvikling",
+      "AI-Løsninger",
+      "Digital Markedsføring"
+    ],
+    knowsAbout: [
+      "Software Development",
+      "Mobile App Development",
+      "Web Development",
+      "AI Integration",
+      "Digital Marketing"
+    ],
+    inLanguage: "da"
   };
 
   return (
@@ -54,8 +67,8 @@ const IndexContent = () => {
       <SEO
         title={t("hero.title") + " " + t("hero.titleGradient")}
         description={t("hero.subtitle")}
-        keywords="AI marketing, sociale medier, email marketing, SEO tekster, Google My Business, marketing automatisering, content marketing, Danmark, Copenhagen"
-        ogTitle="ShaqX - AI Marketing Platform | Start Gratis"
+        keywords="softwareløsning, app udvikling, hjemmeside udvikling, AI løsning, digital markedsføring, webdesign, software udvikling, mobile app, web app, Danmark"
+        ogTitle="ShaqX - Softwareløsning, App Udvikling & AI-Løsninger"
         ogDescription={t("hero.subtitle")}
         structuredData={structuredData}
       />

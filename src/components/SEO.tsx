@@ -29,9 +29,9 @@ const SEO = ({
   const { language } = useLanguage();
   const baseUrl = "https://shaqx.com"; // Update with your actual domain
   
-  const fullTitle = title ? `${title} | ShaqX` : "ShaqX - AI Marketing Platform | Social Media, SEO & Email | CVR 45847136";
-  const metaDescription = description || "Lad AI skrive dine sociale opslag, e-mails, SEO-tekster og Google My Business indlæg. Spar tid og øg din synlighed online med smart marketing-automatisering. Start gratis i dag.";
-  const metaKeywords = keywords || "AI marketing, sociale medier, email marketing, SEO tekster, Google My Business, marketing automatisering, content marketing, Danmark";
+  const fullTitle = title ? `${title} | ShaqX` : "ShaqX - Softwareløsning, App Udvikling & AI-Løsninger | CVR 45847136";
+  const metaDescription = description || "Professionel softwareløsning, app udvikling, hjemmeside udvikling og AI-integration. Vi leverer digitale løsninger og digital markedsføring til virksomheder i Danmark. Få en gratis konsultation.";
+  const metaKeywords = keywords || "softwareløsning, app udvikling, hjemmeside udvikling, AI løsning, digital markedsføring, webdesign, software udvikling, Danmark, Copenhagen";
   
   const currentUrl = canonical || `${baseUrl}${window.location.pathname}`;
   const alternateUrl = language === "en" 
