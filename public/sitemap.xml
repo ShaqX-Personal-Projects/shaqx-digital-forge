@@ -22,7 +22,8 @@
     <xhtml:link rel="alternate" hreflang="da" href="https://shaqx.com/about?lang=da"/>
   </url>
   
-  <!-- Cases Page -->
+  <!-- Cases Page - Temporarily hidden -->
+  <!--
   <url>
     <loc>https://shaqx.com/cases</loc>
     <lastmod>2025-01-28</lastmod>
@@ -31,6 +32,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://shaqx.com/cases?lang=en"/>
     <xhtml:link rel="alternate" hreflang="da" href="https://shaqx.com/cases?lang=da"/>
   </url>
+  -->
   
   <!-- Policies Page -->
   <url>
