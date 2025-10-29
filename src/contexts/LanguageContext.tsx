@@ -333,8 +333,8 @@ const translations = {
       "Vi er et team af passionerede teknologer, der tror på digital innovations kraft til at transformere virksomheder og forbedre liv.",
     "about.page.mission":
       "Vores mission er at levere banebrydende, sikre og skalerbare digitale løsninger, der giver virksomheder mulighed for at trives i det moderne digitale landskab.",
-    "about.page.values.heading": "Vores Kerneværdier",
-    "about.page.values.headingGradient": "",
+    "about.page.values.heading": "Vores Kerne",
+    "about.page.values.headingGradient": "Værdier",
     "about.page.values.subtitle": "Disse principper styrer alt, hvad vi gør hos ShaqX.",
     "about.page.innovation.title": "Innovation Først",
     "about.page.innovation.desc":
