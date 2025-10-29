@@ -237,11 +237,11 @@ const translations = {
     "nav.getInTouch": "Kontakt Os",
 
     // Hero
-    "hero.title": "Bygger Fremtidens",
-    "hero.titleGradient": "Digitale Innovation",
+    "hero.title": "AI-Drevet Marketing",
+    "hero.titleGradient": "Der Virker",
     "hero.subtitle":
-      "Moderne web- og mobilapplikationer, AI-drevne værktøjer og forretningsplatforme, der transformerer hvordan virksomheder arbejder.",
-    "hero.cta": "Kontakt Os",
+      "Lad AI skrive dine sociale opslag, e-mails, SEO-tekster og Google My Business indlæg. Spar tid, øg din synlighed og få bedre resultater med smart marketing-automatisering.",
+    "hero.cta": "Start Gratis i Dag",
 
     // Services
     "services.heading": "Hvad Vi",
@@ -450,7 +450,7 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>("en");
+  const [language, setLanguage] = useState<Language>("da");
 
   const toggleLanguage = () => {
     setLanguage((prev) => (prev === "en" ? "da" : "en"));

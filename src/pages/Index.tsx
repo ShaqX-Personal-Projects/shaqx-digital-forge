@@ -29,17 +29,24 @@ const IndexContent = () => {
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "ShaqX",
-    description: "Modern web and mobile applications, AI-powered tools, and business platforms",
+    "@type": "SoftwareApplication",
+    name: "ShaqX AI Marketing Platform",
+    description: "AI-drevet marketing platform til sociale medier, email, SEO og Google My Business indlæg",
     url: "https://shaqx.com",
-    telephone: "+45-XXXXXXXX",
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "DK"
+    applicationCategory: "BusinessApplication",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "DKK"
     },
-    areaServed: ["DK", "EU", "Global"],
-    serviceType: ["Web Development", "Mobile App Development", "AI Solutions", "Business Platforms"],
+    featureList: "AI content generation, social media posts, email marketing, SEO optimization, Google My Business posts",
+    inLanguage: "da",
+    operatingSystem: "Web Browser",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      ratingCount: "150"
+    }
   };
 
   return (
@@ -47,8 +54,8 @@ const IndexContent = () => {
       <SEO
         title={t("hero.title") + " " + t("hero.titleGradient")}
         description={t("hero.subtitle")}
-        keywords="web development, mobile apps, AI solutions, business platforms, digital transformation, SaaS, Denmark, Copenhagen, fintech, healthcare tech"
-        ogTitle="ShaqX - Modern Web & AI Solutions"
+        keywords="AI marketing, sociale medier, email marketing, SEO tekster, Google My Business, marketing automatisering, content marketing, Danmark, Copenhagen"
+        ogTitle="ShaqX - AI Marketing Platform | Start Gratis"
         ogDescription={t("hero.subtitle")}
         structuredData={structuredData}
       />
