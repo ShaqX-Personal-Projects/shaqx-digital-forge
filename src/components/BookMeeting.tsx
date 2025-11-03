@@ -5,6 +5,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Navn er påkrævet").max(100, "Navn må max være 100 tegn"),
+  company: z.string().trim().max(100, "Firmanavn må max være 100 tegn").optional(),
+  email: z.string().trim().email("Ugyldig email adresse").max(255, "Email må max være 255 tegn"),
+  message: z.string().trim().min(1, "Besked er påkrævet").max(1000, "Besked må max være 1000 tegn"),
+});
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -19,15 +27,33 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Validate form data
+    try {
+      contactSchema.parse(formData);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Valideringsfejl",
+          description: error.errors[0].message,
+          variant: "destructive",
+        });
+        return;
+      }
+    }
+    
     const form = e.target as HTMLFormElement;
-    const formData = new FormData(form);
+    const netlifyFormData = new FormData(form);
     
     try {
-      await fetch("/", {
+      const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString(),
+        body: new URLSearchParams(netlifyFormData as any).toString(),
       });
+      
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
       
       toast({
         title: t("contact.successTitle"),
@@ -42,6 +68,7 @@ const Contact = () => {
         message: "",
       });
     } catch (error) {
+      console.error("Form submission error:", error);
       toast({
         title: "Error",
         description: "Der opstod en fejl. Prøv venligst igen.",
@@ -75,10 +102,12 @@ const Contact = () => {
               name="contact" 
               method="POST" 
               data-netlify="true" 
+              data-netlify-honeypot="bot-field"
               onSubmit={handleSubmit} 
               className="space-y-6"
             >
               <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="bot-field" />
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium flex items-center gap-2">
