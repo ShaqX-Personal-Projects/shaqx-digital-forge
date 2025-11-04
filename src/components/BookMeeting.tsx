@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Mail, Building, User, MessageSquare } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
@@ -6,12 +6,47 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { 
+  sanitizeInput, 
+  isValidEmail, 
+  containsDangerousChars, 
+  isValidSubmissionTiming,
+  isLikelySpam 
+} from "@/utils/security";
+import { createContactFormLimiter } from "@/utils/rateLimit";
 
 const contactSchema = z.object({
-  name: z.string().trim().min(1, "Navn er påkrævet").max(100, "Navn må max være 100 tegn"),
-  company: z.string().trim().max(100, "Firmanavn må max være 100 tegn").optional(),
-  email: z.string().trim().email("Ugyldig email adresse").max(255, "Email må max være 255 tegn"),
-  message: z.string().trim().min(1, "Besked er påkrævet").max(1000, "Besked må max være 1000 tegn"),
+  name: z
+    .string()
+    .trim()
+    .min(1, "Navn er påkrævet")
+    .max(100, "Navn må max være 100 tegn")
+    .refine((val) => !containsDangerousChars(val), {
+      message: "Navn indeholder ugyldige tegn",
+    }),
+  company: z
+    .string()
+    .trim()
+    .max(100, "Firmanavn må max være 100 tegn")
+    .refine((val) => !val || !containsDangerousChars(val), {
+      message: "Firmanavn indeholder ugyldige tegn",
+    })
+    .optional(),
+  email: z
+    .string()
+    .trim()
+    .max(255, "Email må max være 255 tegn")
+    .refine((val) => isValidEmail(val), {
+      message: "Ugyldig email adresse",
+    }),
+  message: z
+    .string()
+    .trim()
+    .min(1, "Besked er påkrævet")
+    .max(1000, "Besked må max være 1000 tegn")
+    .refine((val) => !isLikelySpam(val), {
+      message: "Beskeden ser ud til at være spam",
+    }),
 });
 
 const Contact = () => {
@@ -23,13 +58,47 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const formLoadTime = useRef(Date.now());
+  const rateLimiter = useRef(createContactFormLimiter());
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    if (isSubmitting) return;
+    
+    // Check rate limiting
+    if (!rateLimiter.current.canProceed()) {
+      const timeLeft = rateLimiter.current.getTimeUntilReset();
+      toast({
+        title: "For mange forsøg",
+        description: `Vent venligst ${timeLeft} sekunder før du prøver igen.`,
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    // Check submission timing (bot detection)
+    if (!isValidSubmissionTiming(formLoadTime.current, 2)) {
+      toast({
+        title: "Valideringsfejl",
+        description: "Udfyld venligst formularen korrekt.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    // Sanitize inputs
+    const sanitizedData = {
+      name: sanitizeInput(formData.name),
+      company: sanitizeInput(formData.company),
+      email: sanitizeInput(formData.email),
+      message: sanitizeInput(formData.message),
+    };
+    
     // Validate form data
     try {
-      contactSchema.parse(formData);
+      contactSchema.parse(sanitizedData);
     } catch (error) {
       if (error instanceof z.ZodError) {
         toast({
@@ -40,6 +109,9 @@ const Contact = () => {
         return;
       }
     }
+    
+    setIsSubmitting(true);
+    rateLimiter.current.recordAttempt();
     
     const form = e.target as HTMLFormElement;
     const netlifyFormData = new FormData(form);
@@ -67,13 +139,22 @@ const Contact = () => {
         email: "",
         message: "",
       });
+      
+      // Reset form load time
+      formLoadTime.current = Date.now();
     } catch (error) {
-      console.error("Form submission error:", error);
+      // Don't log error details in production
+      if (process.env.NODE_ENV === "development") {
+        console.error("Form submission error:", error);
+      }
+      
       toast({
-        title: "Error",
+        title: "Fejl",
         description: "Der opstod en fejl. Prøv venligst igen.",
         variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -175,8 +256,13 @@ const Contact = () => {
                 />
               </div>
 
-              <Button type="submit" size="lg" className="w-full md:w-auto min-h-[48px]">
-                {t("contact.submit")}
+              <Button 
+                type="submit" 
+                size="lg" 
+                className="w-full md:w-auto min-h-[48px]"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sender..." : t("contact.submit")}
               </Button>
             </form>
           </div>

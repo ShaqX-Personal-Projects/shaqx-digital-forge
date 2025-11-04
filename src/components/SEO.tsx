@@ -96,9 +96,9 @@ const SEO = ({
       <meta name="twitter:description" content={ogDescription || metaDescription} />
       <meta name="twitter:image" content={ogImage} />
       
-      {/* Performance & Security */}
-      <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-      <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+      {/* Preconnect for fonts (more secure than dns-prefetch) */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       
       {/* Structured Data - Organization */}
       <script type="application/ld+json">

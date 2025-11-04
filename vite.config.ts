@@ -15,4 +15,20 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Security: Enable source maps only in development
+    sourcemap: mode === "development",
+    // Minify for production
+    minify: mode === "production" ? "esbuild" : false,
+    // Security: Remove console logs in production
+    ...(mode === "production" && {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['react', 'react-dom', 'react-router-dom'],
+          },
+        },
+      },
+    }),
+  },
 }));

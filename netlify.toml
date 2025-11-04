@@ -1,0 +1,50 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # HTTPS Enforcement
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    
+    # XSS Protection
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # Content Security Policy
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+    
+    # Permissions Policy
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    
+    # Cache Control
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Redirect HTTP to HTTPS
+[[redirects]]
+  from = "http://shaqx.com/*"
+  to = "https://shaqx.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.shaqx.com/*"
+  to = "https://shaqx.com/:splat"
+  status = 301
+  force = true
+
+# Redirect www to non-www
+[[redirects]]
+  from = "https://www.shaqx.com/*"
+  to = "https://shaqx.com/:splat"
+  status = 301
+  force = true

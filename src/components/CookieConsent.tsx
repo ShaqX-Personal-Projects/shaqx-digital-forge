@@ -10,6 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { secureLocalStorage } from "@/utils/security";
 
 interface CookiePreferences {
   necessary: boolean;
@@ -31,42 +32,43 @@ const CookieConsent = () => {
   });
 
   useEffect(() => {
-    const consent = localStorage.getItem("cookieConsent");
-    if (!consent) {
-      setIsVisible(true);
-    } else {
-      // Load saved preferences
-      try {
-        const saved = JSON.parse(consent);
-        if (saved.preferences) {
-          setPreferences(saved.preferences);
-        }
-      } catch (e) {
-        // Old format, ignore
+    const savedPreferences = secureLocalStorage.getItem("cookieConsent");
+    if (savedPreferences) {
+      setIsVisible(false);
+      // Validate preferences structure
+      if (
+        typeof savedPreferences === "object" &&
+        typeof savedPreferences.necessary === "boolean" &&
+        typeof savedPreferences.functional === "boolean" &&
+        typeof savedPreferences.analytics === "boolean" &&
+        typeof savedPreferences.marketing === "boolean"
+      ) {
+        setPreferences(savedPreferences);
+      } else {
+        // Invalid data, clear it
+        secureLocalStorage.removeItem("cookieConsent");
+        setIsVisible(true);
       }
+    } else {
+      setIsVisible(true);
     }
   }, []);
 
   const handleAcceptAll = () => {
-    const allAccepted = {
+    const allAccepted: CookiePreferences = {
       necessary: true,
       functional: true,
       analytics: true,
       marketing: true,
     };
-    localStorage.setItem("cookieConsent", JSON.stringify({ 
-      accepted: true, 
-      preferences: allAccepted 
-    }));
+    setPreferences(allAccepted);
+    secureLocalStorage.setItem("cookieConsent", allAccepted, 5000); // 5KB limit
     setIsVisible(false);
     setShowPreferences(false);
   };
 
   const handleSavePreferences = () => {
-    localStorage.setItem("cookieConsent", JSON.stringify({ 
-      accepted: true, 
-      preferences 
-    }));
+    secureLocalStorage.setItem("cookieConsent", preferences, 5000); // 5KB limit
     setIsVisible(false);
     setShowPreferences(false);
   };

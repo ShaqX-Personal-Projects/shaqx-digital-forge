@@ -146,34 +146,14 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-foreground">{t("footer.stayConnected")}</h4>
             
-            {/* Social Media */}
+            {/* Social Media - Secure external links */}
             <div className="flex gap-3 mb-6">
               <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:info@shaqx.com"
                 className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-muted/50 hover:bg-primary flex items-center justify-center transition-all hover:scale-110"
-                aria-label="LinkedIn"
+                aria-label="Email"
               >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-muted/50 hover:bg-primary flex items-center justify-center transition-all hover:scale-110"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-muted/50 hover:bg-primary flex items-center justify-center transition-all hover:scale-110"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
+                <Mail className="w-5 h-5" />
               </a>
             </div>
 
